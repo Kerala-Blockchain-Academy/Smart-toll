@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <title>SmartToll</title>
+  <link rel="shortcut icon" href="/images/mvd.png" />
+</head>
+<body>
+  <div class="container">
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="text-center mx-auto">
+          <img src="/images/mvdbadge.png" class="rounded d-block" style="width:100px">
+        </div>
+      </div>
+      <div class="row">
+        <h1 class="mx-auto">SmartToll Management System</h1>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <!-- Contractor Registration form -->
+        <form style="text-align:center" target="iframe_a" action="/conReg" method="POST">
+          <div class="form-group">
+            <h5>Contractor Registration</h5>
+            <input name="contractAdd" type="text" placeholder="Contractor Address">
+          </div>
+          <button class="btn btn-primary" type="submit" id="regCon">Submit</button>
+          <button class="btn btn-danger" type="reset">Clear</button>
+        </form>
+        <br>
+        <!-- User Registration form -->
+        <form style="text-align:center" target="iframe_a" action="/userReg" method="POST">
+          <div class="form-group">
+            <h5>User Registration</h5>
+            <input name="add1" type="text" placeholder="User Address">
+            <br>
+            <input name="vnum" type="text" placeholder="Vehicle No.">
+            </div>
+          <button class="btn btn-primary" type="submit">Submit</button>
+          <button class="btn btn-danger" type="reset">Clear</button>
+        </form>
+        <br>
+        <!-- Buy Tokens form -->
+        <form style="text-align:center" target="iframe_a" action="/buyTokens" method="POST">
+          <div class="form-group">
+            <h5>Buy Tokens</h5>
+            <input name="userAdd1" type="text" placeholder="User Address">
+            <br>
+            <input name="tokenCount1" type="text" pattern="^[0-9]*$" placeholder="No. of Tokens">
+          </div>
+          <button class="btn btn-primary" type="submit" id="tollPay">Submit</button>
+          <button class="btn btn-danger" type="reset">Clear</button>
+        </form>
+        <br>
+        <!-- Pay Toll form -->
+        <form style="text-align:center" target="iframe_a" action="/payToll" method="POST">
+          <div class="form-group">
+            <h5>Pay Toll</h5>
+            <input name="userAdd" type="text" placeholder="User Address">
+          </div>
+          <button class="btn btn-primary" type="submit" id="tollPay">Submit</button>
+          <button class="btn btn-danger" type="reset">Clear</button>
+        </form>
+        <br>
+      </div>
+      <div class="col-md-6">
+        <!-- Account Balance form -->
+        <form action="/accBal" target="iframe_a" method="POST" style="text-align:center">
+          <div class="form-group">
+            <h5>View Account Balance</h5>
+            <input name="userBalAdd" placeholder="Enter Address">
+          </div>
+          <button class="btn btn-primary" type="submit">Show Balance</button>
+          <button class="btn btn-danger" type="reset">Clear</button>
+        </form>
+        <br>
+        <!-- View User form -->
+        <form action="/viewUser" target="iframe_a" method="POST" style="text-align:center">
+          <div class="form-group">
+            <h5>Registered User Details</h5>
+            <input name="regUsers" placeholder="User Address">
+          </div>
+          <button type="submit" class="btn btn-primary" id="regUsers">Show Details</button>
+          <button class="btn btn-danger" type="reset">Clear</button>
+        </form>
+        <br>
+        <!-- Withdraw Tokens form -->
+        <form style="text-align:center" target="iframe_a" action="/withdrawTokens" method="POST">
+          <div class="form-group">
+            <h5>Withdraw Tokens</h5>
+            <input name="contractWithdraw" type="text" placeholder="Contractor Address">
+            <br>
+            <input name="withdrawCount" type="text" placeholder="No. of Tokens">
+          </div>
+          <br>
+          <button class="btn btn-primary" type="submit" id="withdrawToll">Submit</button>
+          <button class="btn btn-danger" type="reset">Clear</button>
+        </form>
+        <br>
+        <!-- Toll Payment History form -->
+        <form action="/viewHistory" target="iframe_a" method="POST" style="text-align:center">
+          <div class="form-group">
+            <h5>Toll Payment History</h5>
+            <input name="userAdd2" placeholder="Enter Address">
+          </div>
+          <button type="submit" class="btn btn-primary" id="userAdd2">Show Details</button>
+          <button class="btn btn-danger" type="reset">Clear</button>
+        </form>
+        <br>
+      </div>
+    </div>
+    <!-- Iframe to handle responses -->
+    <div class="container">
+        <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" height="120px" width="100%" name="iframe_a"></iframe>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
